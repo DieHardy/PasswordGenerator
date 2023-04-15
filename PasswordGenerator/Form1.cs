@@ -28,6 +28,11 @@ namespace PasswordGenerator
             try
             {
                 lengthPassword = Int32.Parse(textBox1.Text);
+                if (lengthPassword > 1500)
+                {
+                    MessageBox.Show("You can`t enter a password more than 1500 symbols!");
+                    lengthPassword = -1;
+                }
             }
             catch (FormatException)
             {
